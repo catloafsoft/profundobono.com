@@ -1,5 +1,5 @@
-show: true
-show_dev: true
+show: false
+show_dev: false
 performances:
   - date: "Friday, November 15, 2024"
     time: "7:30 PM"

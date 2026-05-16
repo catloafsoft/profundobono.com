@@ -1,19 +1,5 @@
-Every other year since 2004, we have produced a musical comedy to raise funds to support the groups who provide (non-criminal) legal services to the impoverished of Delaware. These groups help children and families to stay in their homes and be protected from abuse.
+Every other year since 2004, Profundo Bono has produced a musical comedy to raise funds to support the groups who provide (non-criminal) legal services to the impoverished of Delaware. These groups help children and families to stay in their homes and be protected from abuse.
 
-In November 2022, we had our 9th show. Each time, the Honorable Robert B. Young wrote an original script, and it has been performed by judges, lawyers, and legal professionals from across the State of Delaware. With this show, we are exploring the works of other playwrights, testing their skill. While it entails a great deal of work to put on, the actors, musicians, directors, and stagehands (from every aspect of practice, type of firm, part of the state, age, race, etc.) enjoy working without any remuneration for the benefit of the citizens of Delaware.
+In November 2024, we had our 10th show. To honor the many years of playwriting by Judge Robert B. Young, our plays continue to be performed by judges, lawyers, and legal professionals from across the State of Delaware (and occasionally just over the line!).
 
-In the past, we’ve done “Macbeth”, “A Tale of Two Cities”, “Moby Dick”, “An American Tragedy”, “Madame Bovary”, “The Crucible”, “The Public Enemy”, “Tennessee Waltz,” and “The Finishing School.” As always, we take a perfectly dreary theme and then twist it into a musical comedy with 20-some songs, several dances, a live band, and a great ending. Over the years, we have become fairly well known, especially in what has become a very supportive legal community.
-
-As many of you know, Judge Young has left us but we are committed to carrying on his legacy. As a non-profit organization, our purposes include:
-
-- To present live theatre productions for the cultural education, entertainment, and inspiration of the community.
-- To welcome and provide an avocational opportunity for all volunteers interested in the theatre arts to participate in the many activities of community theatre.
-- To generate proceeds for donation to third-party non-profit organizations furnishing or enabling charitable services to the community.
-
-Our fundraising benefits the Combined Campaign for Justice, which enables Delaware’s three legal services agencies–Community Legal Aid Society, Inc., Delaware Volunteer Legal Services, Inc., and Legal Services Corporation of Delaware, Inc.–to continue to provide legal services to low-income Delaware families in need of assistance. To learn more about CCJ, you can visit [their website here](https://delawareccj.org/){:target="\_blank"}.
-
-Persons interested in participating should contact:
-
-[Adam Hiller at ahiller@adamhillerlaw.com](mailto:ahiller@adamhillerlaw.com)
-
-Thank you very much for being a supporter of our cause!
+While it entails a great deal of work to put on, the actors, musicians, directors, and stage hands (from every aspect of practice, type of firm, part of the state, age, race, etc.) enjoy working without any remuneration for the benefit of the citizens of Delaware.

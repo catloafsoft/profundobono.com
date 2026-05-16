@@ -21,4 +21,11 @@
     h4 {
         margin-bottom: 0;
     }
+    h2:first-child {
+        font-size: 1.875rem;
+    }
+    h1, h2, p, li, ol, ul {
+        font-size: .5rem;
+        margin: .25rem 0;
+    }
 }
