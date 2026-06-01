@@ -2,7 +2,6 @@
 -------------------------------------------------*/
 .legal {
     @extend %space;
-    background: $colorBg;
     .row {
         @include breakpoint(small) {
             display: flex;
