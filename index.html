@@ -52,17 +52,6 @@ display %}
   </div>
 </div>
 <!-- End About -->
-{% comment %}
-<!-- Start Auditions -->
-<div id="auditions" class="auditions">
-  <div class="container-fluid">
-    <h2 class="section-title">Auditions</h2>
-    {% capture auditions %}{% include auditions.md %}{% endcapture %} {{
-    auditions | markdownify }}
-  </div>
-</div>
-<!-- End Auditions -->
-{% endcomment %}
 <!-- Start About the Show -->
 <div id="aboutshow" class="aboutshow">
   <div class="container-fluid">
@@ -72,7 +61,15 @@ display %}
   </div>
 </div>
 <!-- End About The Show -->
-<!-- Start Tickets
+<!-- Start Auditions -->
+<div id="auditions" class="auditions">
+  <div class="container-fluid">
+    <h2 class="section-title">Auditions</h2>
+    {% capture auditions %}{% include auditions.md %}{% endcapture %} {{ auditions | markdownify }}
+  </div>
+</div>
+<!-- End Auditions -->
+<!-- Start Tickets -->
 <div id="tickets" class="tickets">
   <div class="container-fluid">
     <h2 class="section-title">Tickets</h2>
@@ -83,7 +80,7 @@ display %}
     {% endif %}
   </div>
 </div>
-End Tickets -->
+<!-- End Tickets -->
 <!-- Start Ads -->
 <div id="ads" class="ads">
   <div class="container-fluid">
@@ -97,6 +94,7 @@ End Tickets -->
 <div id="legal" class="legal">
   <div class="container-fluid">
     <h2 class="section-title">Legal (disclaimers, not actors)</h2>
+    <h4 class="section-title">TERMS, CONDITIONS, DISCLAIMERS, WARNINGS, ADVISORIES, CAVEATS, NOTICES, FINE PRINT, CODICILS, AND GENERAL EXPRESSIONS OF INSTITUTIONAL ANXIETY</h4>
     {% capture legal %}{% include legal.md %}{% endcapture %} {{ legal |
     markdownify }}
   </div>

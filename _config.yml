@@ -15,7 +15,7 @@ hero:
 api_token: # Enter API token here
 
 # Set this to true to turn off ticket purchasing close to the date of a show
-no_tickets: true
+no_tickets: false
 
 # Stripe API keys
 stripe_pk: pk_live_51KWk4bIPKZMTWNGPsWu1FtmuyCoqhkhL298u2zmfEvQqesAQ3X1UsjnirEvIE1aZSxMxFgyXMXryQhlpnRKAHFfQ00lSPmq8LX

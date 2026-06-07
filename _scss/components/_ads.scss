@@ -1,25 +1,17 @@
 /* ADS
 -------------------------------------------------*/
 .ads {
-  margin-bottom: $space;
-  @extend %space;
-  color: $white;
-  background: lighten($colorPrimary, 2%);
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-weight: 700;
-    color: $white;
-  }
-  h3 {
-    padding-top: 15px;
-  }
-  h4,
-  h5,
-  h6 {
-    padding: 10px 0;
-    margin: 0;
-  }
+    margin-bottom: $space;
+    background: $colorBg;
+    @extend %space;
+    h2, h3, h4, h5, h6 {
+        font-weight: 700;
+    }
+    h3 {
+        padding-top: 15px;
+    }
+    h4, h5, h6 {
+        padding: 10px 0;
+        margin: 0;
+    }
 }

@@ -1,9 +1,21 @@
-# A Look Back from the Director's Chair
+What is “Flifferschmeep,” you ask? I’m glad you asked. It’s two things:
 
-It starts with a writer's idea that becomes words on a page and notes on a staff. Then it becomes a director's vision of what those words and notes could become being spoken and sung. Casting is done, rehearsals begin, and then the magic happens. And there was plenty of magic in the year-long journey that brought _Anna Karenina: From Train to Trial_ to stages in Wilmington and Dover.
+*Flifferschmeep, Another Example of What Happens When You Get Lawyers Involved*, is an original musical comedy adapted from the author’s novel of the same name—which he is desperately trying to self-publish.
 
-Producing a complex, original musical that's never been performed before was a unique challenge that required every cast and crew member to dig deep and bring their best to the project. Oh, and did I mention that Selena Molina, the author who brilliantly transformed a turgid tale of Imperial Russian betrayal into a hysterical comic parody, was in the cast?
+It is the 11th production of Profundo Bono, Delaware’s theater company composed entirely of judges, lawyers, and other legal professionals, dedicated to Robert Young (though not remotely written in his style).
 
-From Jim McGiffin's inspired musical direction to Erin Della Barca's imaginative choreography to the insight and humor each performer brought to their characters, this show was truly the creative accomplishment of a talented and dedicated community of professionals. And I don't just mean legal professionals. I mean artistic professionals. If this group ever decides to leave the law behind and take this show on the road, they'll all be embarked on successful second careers. And I'd be honored to go with them.
+The production features:
 
-— _Ray Crew, Director_
+- 30 characters played by 26 actors
+- 25 unoriginal musical numbers
+- At least one cameo appearance
+- A steadily escalating sequence of events that becomes increasingly difficult to explain
+
+Performances will take place:
+
+- **November 13 and 14** in Wilmington
+- **November 15** in Dover
+
+But what does *Flifferschmeep* mean?
+
+It’s something literally earth-changing — but to know the answer, you need to buy a ticket and come to the show.

@@ -2,6 +2,7 @@
 -------------------------------------------------*/
 .auditions {
     @extend %space;
+    background: $colorBg;
     h4 {
         padding: 10px 0 0;
         margin: 0;

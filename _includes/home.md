@@ -1,1 +1,1 @@
-**We are Profundo Bono, Inc., the theater company composed entirely of Delaware judges, lawyers, and other legal professionals.**
+Profundo Bono, Delaware’s theater company composed entirely of judges, lawyers, and other legal professionals, will be performing its 11th show this year, *Flifferschmeep, Another Example of What Happens When You Get Lawyers Involved*, on November 13, 14, and 15, 2026 in Wilmington at the Laird Performing Arts Center at Tatnall School (13th & 14th) and in Dover at a location to be determined (15th).
