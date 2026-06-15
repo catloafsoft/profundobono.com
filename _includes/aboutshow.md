@@ -1,6 +1,6 @@
 What is “Flifferschmeep,” you ask? I’m glad you asked. It’s two things:
 
-*Flifferschmeep, Another Example of What Happens When You Get Lawyers Involved*, is an original musical comedy adapted from the author’s novel of the same name—which he is desperately trying to self-publish.
+*Flifferschmeep: Another Example of What Happens When You Get Lawyers Involved*, is an original musical comedy adapted from the author’s novel of the same name—which he is desperately trying to self-publish.
 
 It is the 11th production of Profundo Bono, Delaware’s theater company composed entirely of judges, lawyers, and other legal professionals, dedicated to Robert Young (though not remotely written in his style).
 
@@ -13,8 +13,8 @@ The production features:
 
 Performances will take place:
 
-- **November 13 and 14** in Wilmington
-- **November 15** in Dover
+- **November 13 and 14, at 7:30 PM** in Wilmington
+- **November 15, at 2:00 PM** in Dover
 
 But what does *Flifferschmeep* mean?
 
