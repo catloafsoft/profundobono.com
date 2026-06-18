@@ -1,0 +1,21 @@
+name = "profundobono-mailing-list"
+main = "worker/src/index.mjs"
+compatibility_date = "2026-06-18"
+workers_dev = false
+
+[[routes]]
+pattern = "profundobono.com/subscribe"
+zone_name = "profundobono.com"
+
+[vars]
+ALLOWED_ORIGIN = "https://profundobono.com"
+MAILING_LIST_FROM = "mailing-list@profundobono.com"
+MAILING_LIST_TO = "ProfundoBono@adamhillerlaw.com"
+
+[secrets]
+required = ["TURNSTILE_SECRET_KEY"]
+
+[[send_email]]
+name = "EMAIL"
+destination_address = "ProfundoBono@adamhillerlaw.com"
+allowed_sender_addresses = ["mailing-list@profundobono.com"]

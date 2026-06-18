@@ -2,3 +2,7 @@ _site
 .sass-cache
 node_modules/
 .jekyll-*
+.dev.vars*
+.env*
+!.dev.vars.example
+.wrangler/

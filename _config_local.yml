@@ -1,0 +1,7 @@
+# Local development overrides.
+# Use with: bundle exec jekyll serve --config _config.yml,_config_local.yml
+mailing_list:
+  endpoint: "http://127.0.0.1:8787/subscribe"
+  turnstile_site_key: "0x4AAAAAADnYJZIrA3CpeT1C"
+  turnstile_test_site_key: "1x00000000000000000000AA"
+

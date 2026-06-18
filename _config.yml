@@ -1,3 +1,8 @@
+mailing_list:
+  endpoint: "/subscribe"
+  turnstile_site_key: "0x4AAAAAADnYJZIrA3CpeT1C"
+  turnstile_test_site_key: "1x00000000000000000000AA"
+
 # Site settings
 title: Profundo Bono
 description: "A non-profit theater company of Delaware lawyers and legal professionals"
@@ -54,6 +59,10 @@ exclude: [
     Gemfile,
     Gemfile.lock,
     .gitignore,
+    docs,
+    tests,
+    worker,
+    wrangler.toml,
     svg,
     tutorial,
     README.md,

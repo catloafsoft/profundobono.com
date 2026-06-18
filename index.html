@@ -40,9 +40,11 @@ display %}
   <div class="container-fluid">
     {% capture home %}{% include home.md %}{% endcapture %} {{ home |
     markdownify }}
+
+    {% include mailing-list.html %}
   </div>
 </div>
-<!-- End About -->
+<!-- End Home -->
 <!-- Start About -->
 <div id="about" class="about">
   <div class="container-fluid">

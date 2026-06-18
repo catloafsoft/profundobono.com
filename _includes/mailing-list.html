@@ -1,0 +1,152 @@
+{% assign mailing_list_endpoint = site.mailing_list.endpoint | default: "/subscribe" %}
+{% assign production_turnstile_site_key = site.mailing_list.turnstile_site_key | default: "" %}
+{% assign test_turnstile_site_key = site.mailing_list.turnstile_test_site_key | default: "1x00000000000000000000AA" %}
+{% if jekyll.environment == "production" %}
+{% assign turnstile_site_key = production_turnstile_site_key %}
+{% else %}
+{% assign turnstile_site_key = test_turnstile_site_key %}
+{% endif %}
+
+<div id="mailing-list" class="mailing-list">
+  <h2 class="section-title">Join Our Mailing List</h2>
+      <p class="mailing-list-copy">
+        Get show announcements, ticket reminders, and audition updates by email.
+      </p>
+
+      <form
+        action="{{ mailing_list_endpoint }}"
+        class="mailing-list-form"
+        data-mailing-list-form
+        method="post"
+        novalidate
+      >
+        <div class="mailing-list-fields">
+          <label class="sr-only" for="mailing-list-email">Email address</label>
+          <input
+            autocomplete="email"
+            id="mailing-list-email"
+            name="email"
+            placeholder="Email address"
+            required
+            type="email"
+            {% unless turnstile_site_key != "" %}disabled{% endunless %}
+          />
+          <button
+            class="btn btn-primary"
+            data-mailing-list-submit
+            type="submit"
+            {% unless turnstile_site_key != "" %}disabled{% endunless %}
+          >
+            Join
+          </button>
+        </div>
+
+        {% if turnstile_site_key != "" %}
+        <div
+          class="cf-turnstile"
+          data-sitekey="{{ turnstile_site_key }}"
+        ></div>
+        {% endif %}
+
+        <p
+          aria-live="polite"
+          class="mailing-list-status{% unless turnstile_site_key != "" %} is-error{% endunless %}"
+          data-mailing-list-status
+        >{% unless turnstile_site_key != "" %}Mailing list signup is being configured.{% endunless %}</p>
+      </form>
+</div>
+
+{% if turnstile_site_key != "" %}
+<script
+  async
+  defer
+  src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+></script>
+{% endif %}
+
+<script>
+  (function () {
+    var form = document.querySelector("[data-mailing-list-form]");
+
+    if (!form) {
+      return;
+    }
+
+    var status = form.querySelector("[data-mailing-list-status]");
+    var submit = form.querySelector("[data-mailing-list-submit]");
+    var turnstileWidget = form.querySelector(".cf-turnstile");
+
+    function setStatus(message, state) {
+      status.textContent = message;
+      status.classList.remove("is-error", "is-success", "is-pending");
+
+      if (state) {
+        status.classList.add("is-" + state);
+      }
+    }
+
+    function resetTurnstile() {
+      if (window.turnstile && turnstileWidget) {
+        window.turnstile.reset(turnstileWidget);
+      }
+    }
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      var email = form.email.value.trim();
+      var tokenInput = form.querySelector('[name="cf-turnstile-response"]');
+      var turnstileToken = tokenInput ? tokenInput.value : "";
+
+      if (!email) {
+        setStatus("Enter your email address.", "error");
+        return;
+      }
+
+      if (!turnstileToken) {
+        setStatus("Complete the CAPTCHA check and try again.", "error");
+        return;
+      }
+
+      submit.disabled = true;
+      setStatus("Submitting...", "pending");
+
+      fetch(form.action, {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify({
+          email: email,
+          turnstileToken: turnstileToken,
+        }),
+      })
+        .then(function (response) {
+          return response
+            .json()
+            .catch(function () {
+              return {};
+            })
+            .then(function (body) {
+              if (!response.ok || !body.ok) {
+                throw new Error(body.error || "Signup failed. Please try again.");
+              }
+
+              return body;
+            });
+        })
+        .then(function (body) {
+          form.reset();
+          resetTurnstile();
+          setStatus(body.message || "Thanks. You are on the list.", "success");
+        })
+        .catch(function (error) {
+          resetTurnstile();
+          setStatus(error.message, "error");
+        })
+        .then(function () {
+          submit.disabled = false;
+        });
+    });
+  })();
+</script>
