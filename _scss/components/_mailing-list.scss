@@ -3,6 +3,9 @@
 .mailing-list {
     @extend %space;
     padding-bottom: 0;
+    .section-title {
+        margin-bottom: 0;
+    }
 }
 
 .mailing-list-box {
