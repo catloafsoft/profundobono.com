@@ -2,6 +2,7 @@ mailing_list:
   endpoint: "/subscribe"
   turnstile_site_key: "0x4AAAAAADnYJZIrA3CpeT1C"
   turnstile_test_site_key: "1x00000000000000000000AA"
+  use_test_turnstile: false
 
 # Site settings
 title: Profundo Bono

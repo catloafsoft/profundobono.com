@@ -1,9 +1,8 @@
 {% assign mailing_list_endpoint = site.mailing_list.endpoint | default: "/subscribe" %}
 {% assign production_turnstile_site_key = site.mailing_list.turnstile_site_key | default: "" %}
 {% assign test_turnstile_site_key = site.mailing_list.turnstile_test_site_key | default: "1x00000000000000000000AA" %}
-{% if jekyll.environment == "production" %}
 {% assign turnstile_site_key = production_turnstile_site_key %}
-{% else %}
+{% if site.mailing_list.use_test_turnstile %}
 {% assign turnstile_site_key = test_turnstile_site_key %}
 {% endif %}
 

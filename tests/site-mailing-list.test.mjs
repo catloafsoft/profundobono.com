@@ -43,13 +43,15 @@ test("mailing-list public config is declared once", async () => {
   assert.equal(mailingListDeclarations.length, 1);
 });
 
-test("local development uses a Turnstile test sitekey", async () => {
+test("deployed builds use the real Turnstile sitekey by default", async () => {
   const config = await read("_config.yml");
   const include = await read("_includes/mailing-list.html");
 
+  assert.match(config, /turnstile_site_key: "0x/);
   assert.match(config, /turnstile_test_site_key: "1x00000000000000000000AA"/);
-  assert.match(include, /jekyll\.environment == "production"/);
-  assert.match(include, /turnstile_test_site_key/);
+  assert.match(config, /use_test_turnstile: false/);
+  assert.match(include, /use_test_turnstile/);
+  assert.doesNotMatch(include, /jekyll\.environment == "production"/);
 });
 
 test("local Jekyll config points the form at the local Worker", async () => {
@@ -57,4 +59,5 @@ test("local Jekyll config points the form at the local Worker", async () => {
 
   assert.match(config, /endpoint: "http:\/\/127\.0\.0\.1:8787\/subscribe"/);
   assert.match(config, /turnstile_test_site_key: "1x00000000000000000000AA"/);
+  assert.match(config, /use_test_turnstile: true/);
 });
