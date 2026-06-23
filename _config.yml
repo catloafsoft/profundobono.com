@@ -10,6 +10,7 @@ description: "A non-profit theater company of Delaware lawyers and legal profess
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://profundobono.com" # the name of your domain
 logo: /img/logo.jpg
+social_image: /img/social-banner.png
 imgprefix: ""  # Used for Cloudflare image resizing, leave blank in dev
 
 # Hero
