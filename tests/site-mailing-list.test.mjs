@@ -18,6 +18,7 @@ test("mailing-list include posts email and Turnstile token to the Worker", async
   assert.match(include, /data-mailing-list-form/);
   assert.match(include, /type="email"/);
   assert.match(include, /cf-turnstile/);
+  assert.match(include, /data-action="turnstile-spin-v2"/);
   assert.match(include, /turnstileToken/);
   assert.match(include, /fetch\(form\.action/);
 });
@@ -47,7 +48,10 @@ test("deployed builds use the real Turnstile sitekey by default", async () => {
   const config = await read("_config.yml");
   const include = await read("_includes/mailing-list.html");
 
-  assert.match(config, /turnstile_site_key: "0x/);
+  assert.match(
+    config,
+    /turnstile_site_key: "0x4AAAAAADnYJZIrA3CpeT1C"/,
+  );
   assert.match(config, /turnstile_test_site_key: "1x00000000000000000000AA"/);
   assert.match(config, /use_test_turnstile: false/);
   assert.match(include, /use_test_turnstile/);

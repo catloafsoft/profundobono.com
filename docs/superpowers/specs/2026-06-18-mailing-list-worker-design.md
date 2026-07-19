@@ -19,7 +19,7 @@ The Jekyll site remains static. It renders a compact signup form and posts JSON 
 ## Security
 
 - The Worker does not trust client-side validation.
-- The Turnstile secret is stored as a Worker secret named `TURNSTILE_SECRET_KEY`.
+- The Turnstile secret is stored as a Worker secret named `TURNSTILE_SECRET`.
 - The Worker rejects invalid emails, missing CAPTCHA tokens, failed CAPTCHA validations, unsupported methods, and malformed JSON.
 - The Cloudflare Email Service binding is restricted to `ProfundoBono@adamhillerlaw.com`.
 - The notification email is plain text to avoid rendering submitted input as HTML.
@@ -30,7 +30,6 @@ Cloudflare setup requires:
 
 - A Turnstile widget for `profundobono.com`.
 - `_config.yml` value `mailing_list.turnstile_site_key`.
-- Worker secret: `wrangler secret put TURNSTILE_SECRET_KEY`.
+- Worker secret: `wrangler secret put TURNSTILE_SECRET`.
 - Email Service onboarding for the `profundobono.com` sender domain.
 - A verified sender address such as `mailing-list@profundobono.com`.
-

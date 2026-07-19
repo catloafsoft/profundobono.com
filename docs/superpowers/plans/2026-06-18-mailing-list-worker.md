@@ -45,11 +45,10 @@
 
 - [ ] Add `wrangler.toml` with route, vars, and restricted `send_email` binding.
 - [ ] Ensure no secrets are committed.
-- [ ] Document the required `TURNSTILE_SECRET_KEY` secret in comments or final notes.
+- [ ] Document the required `TURNSTILE_SECRET` secret in comments or final notes.
 
 ### Task 4: Verification
 
 - [ ] Run `node --test tests/subscribe-worker.test.mjs`.
 - [ ] Run `bundle exec jekyll build`.
 - [ ] Inspect git diff for unrelated changes and secret leakage.
-
