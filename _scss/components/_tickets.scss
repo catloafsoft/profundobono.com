@@ -1,7 +1,11 @@
+@use "sass:color";
+@use "../utils/config";
+@use "../utils/extends";
+
 /* TICKETS
 -------------------------------------------------*/
 .tickets {
-  margin-bottom: $space;
+  margin-bottom: config.$space;
   @extend %space;
   h4,
   h2 {
@@ -15,7 +19,7 @@
     padding-bottom: 2rem;
   }
   hr {
-    border-color: darken($colorBg, 30%);
+    border-color: color.adjust(config.$colorBg, $lightness: -30%);
   }
   .col-sm-4 {
     overflow: hidden;

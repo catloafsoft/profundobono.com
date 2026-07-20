@@ -1,3 +1,5 @@
+@use "../base/typography";
+
 .logo {
     height: 55px;
     margin-right: 10px;
@@ -5,6 +7,7 @@
     top: -9px;
 }
 .toplink {
-    margin: 10px 0 5px;
-    @include script-font;
+    margin: 0;
+    line-height: 1;
+    @include typography.script-font;
 }

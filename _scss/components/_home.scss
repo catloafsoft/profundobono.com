@@ -1,8 +1,11 @@
+@use "../utils/config";
+@use "../utils/extends";
+
 /* HOME
 -------------------------------------------------*/
 .home {
     @extend %space;
     .media {
-        margin-bottom: $space;
+        margin-bottom: config.$space;
     }
 }

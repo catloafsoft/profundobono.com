@@ -1,3 +1,6 @@
+@use "../utils/config";
+@use "../utils/mixins";
+
 /* HERO
 -------------------------------------------------*/
 .hero {
@@ -8,28 +11,28 @@
     }
     .icon {
         margin-right: 10px;
-        color: $colorPrimary;
+        color: config.$colorPrimary;
         vertical-align: top;
     }
 }
 
 .hero-content {
-    padding: $space 0;
-    background: rgba($white, 0.7);
-    @include breakpoint(small) {
+    padding: config.$space 0;
+    background: rgba(config.$white, 0.7);
+    @include mixins.breakpoint(small) {
         position: absolute;
         bottom: 0;
         left: 0;
         width: 100%;
     }
     .hero-content-inner {
-        @include breakpoint(small) {
+        @include mixins.breakpoint(small) {
             width: 50%;
         }
     }
     h1 {
         margin: 0 0 5px;
-        color: $colorPrimary;
+        color: config.$colorPrimary;
     }
     p {
         font-size: 1.125rem;

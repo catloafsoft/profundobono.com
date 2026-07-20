@@ -1,14 +1,18 @@
+@use "sass:color";
+@use "../utils/config";
+@use "../utils/extends";
+
 /* FOOTER
 -------------------------------------------------*/
 .main-footer {
     @extend %space;
-    color: $white;
-    background: lighten($colorPrimary, 2%);
+    color: config.$white;
+    background: color.adjust(config.$colorPrimary, $lightness: 2%);
     text-align: center;
     small {
         display: block;
         > a {
-            color: $white;
+            color: config.$white;
         }
     }
 }

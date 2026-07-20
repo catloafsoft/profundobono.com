@@ -1,6 +1,9 @@
+@use "../utils/config";
+@use "../utils/extends";
+
 /* ABOUT THE SHOW
 -------------------------------------------------*/
 .aboutshow {
     @extend %space;
-    margin-bottom: $space;
+    margin-bottom: config.$space;
 }

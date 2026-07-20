@@ -3,8 +3,12 @@
 
     /* Hide menu after click
     ----------------------------------------------*/
-    $('.navbar-nav li a').click(function(event) {
-        $('.in').collapse('hide');
+    $('.navbar-nav li a').click(function() {
+        var navigation = document.getElementById('main-navigation');
+
+        if (navigation && navigation.classList.contains('show')) {
+            bootstrap.Collapse.getOrCreateInstance(navigation).hide();
+        }
     });
 
     /* Smooth scroll to section
@@ -48,7 +52,9 @@
 
     /* Tooltip
     ----------------------------------------------*/
-    $('[data-toggle="tooltip"]').tooltip();
+    document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(function(element) {
+        new bootstrap.Tooltip(element);
+    });
 
     /* Lightbox
     ----------------------------------------------*/
@@ -105,4 +111,3 @@
     });
           
 })(jQuery);
-

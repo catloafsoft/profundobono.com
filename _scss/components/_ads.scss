@@ -1,8 +1,11 @@
+@use "../utils/config";
+@use "../utils/extends";
+
 /* ADS
 -------------------------------------------------*/
 .ads {
-    margin-bottom: $space;
-    background: $colorBg;
+    margin-bottom: config.$space;
+    background: config.$colorBg;
     @extend %space;
     h2, h3, h4, h5, h6 {
         font-weight: 700;
