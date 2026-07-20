@@ -84,16 +84,22 @@ async function readPayload(request) {
 }
 
 async function verifyTurnstile(token, request, env, fetchImpl) {
+  const body = new URLSearchParams({
+    secret: env.TURNSTILE_SECRET,
+    response: token,
+  });
+  const clientIp = request.headers.get("cf-connecting-ip");
+
+  if (clientIp) {
+    body.set("remoteip", clientIp);
+  }
+
   const response = await fetchImpl(TURNSTILE_SITEVERIFY_URL, {
     method: "POST",
     headers: {
-      "content-type": "application/json",
+      "content-type": "application/x-www-form-urlencoded",
     },
-    body: JSON.stringify({
-      secret: env.TURNSTILE_SECRET_KEY,
-      response: token,
-      remoteip: request.headers.get("cf-connecting-ip") || undefined,
-    }),
+    body,
   });
 
   return response.json();
@@ -131,7 +137,7 @@ export async function handleSubscribeRequest(request, env = {}, options = {}) {
     );
   }
 
-  if (!env.TURNSTILE_SECRET_KEY || !env.EMAIL) {
+  if (!env.TURNSTILE_SECRET || !env.EMAIL) {
     return jsonResponse(request, env, 500, {
       ok: false,
       error: "Signup is not configured yet.",

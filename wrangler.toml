@@ -13,7 +13,7 @@ MAILING_LIST_FROM = "mailing-list@profundobono.com"
 MAILING_LIST_TO = "ProfundoBono@adamhillerlaw.com"
 
 [secrets]
-required = ["TURNSTILE_SECRET_KEY"]
+required = ["TURNSTILE_SECRET"]
 
 [[send_email]]
 name = "EMAIL"

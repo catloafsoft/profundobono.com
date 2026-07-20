@@ -12,7 +12,7 @@ function makeEnv(overrides = {}) {
   const sent = [];
 
   return {
-    TURNSTILE_SECRET_KEY: "turnstile-secret",
+    TURNSTILE_SECRET: "turnstile-secret",
     MAILING_LIST_FROM: "mailing-list@profundobono.com",
     MAILING_LIST_TO: "ProfundoBono@adamhillerlaw.com",
     EMAIL: {
@@ -46,12 +46,15 @@ function passingTurnstileFetch(assertions = {}) {
       "https://challenges.cloudflare.com/turnstile/v0/siteverify",
     );
     assert.equal(init.method, "POST");
-    assert.equal(init.headers["content-type"], "application/json");
+    assert.equal(
+      init.headers["content-type"],
+      "application/x-www-form-urlencoded",
+    );
 
-    const body = JSON.parse(init.body);
-    assert.equal(body.secret, "turnstile-secret");
-    assert.equal(body.response, validPayload.turnstileToken);
-    assert.equal(body.remoteip, "203.0.113.42");
+    const body = new URLSearchParams(init.body);
+    assert.equal(body.get("secret"), "turnstile-secret");
+    assert.equal(body.get("response"), validPayload.turnstileToken);
+    assert.equal(body.get("remoteip"), "203.0.113.42");
 
     if (assertions.onBody) {
       assertions.onBody(body);
