@@ -1,3 +1,5 @@
+@use "../utils/config";
+
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&display=swap');
 @mixin script-font {
   font-family: 'Cormorant Garamond', serif;
@@ -8,8 +10,8 @@
 /* Headings & Paragraphs
 -------------------------------*/
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
-    color: $colorHeading;
-    font-family: $fontFamilySecondary;
+    color: config.$colorHeading;
+    font-family: config.$fontFamilySecondary;
 }
 
 h1, .h1 {
@@ -60,7 +62,7 @@ p {
 /* Links
 -------------------------------*/
 a {
-    color: $colorPrimary;
+    color: config.$colorPrimary;
     text-decoration: none;
     &:hover, &:focus {
         text-decoration: underline;
@@ -70,5 +72,5 @@ a {
 /* Emphasis
 -------------------------------*/
 strong {
-    font-weight: $fontWeightSemi;
+    font-weight: config.$fontWeightSemi;
 }

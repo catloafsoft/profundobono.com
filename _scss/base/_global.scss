@@ -1,12 +1,15 @@
+@use "../utils/config";
+@use "../utils/mixins";
+
 /* GLOBAL
 -------------------------------------------------*/
 html {
   box-sizing: border-box;
   font-size: 85%;
-  @include breakpoint(small) {
+  @include mixins.breakpoint(small) {
     font-size: 90%;
   }
-  @include breakpoint(large) {
+  @include mixins.breakpoint(large) {
     font-size: 100%;
   }
 }
@@ -19,8 +22,8 @@ html {
 
 body {
   margin: 0;
-  color: $colorBase;
-  font-family: $fontFamilyPrimary;
+  color: config.$colorBase;
+  font-family: config.$fontFamilyPrimary;
   font-size: 1rem;
   line-height: 1.6;
 }

@@ -1,14 +1,18 @@
+@use "sass:color";
+@use "../utils/config";
+@use "../utils/extends";
+
 /* CONCERT VIDEO
 -------------------------------------------------*/
 .concertvideo {
     @extend %space;
     .media {
-        margin-bottom: $space;
+        margin-bottom: config.$space;
     }
     h2, h3 {
 	text-align: center;
     }
-    background: lighten($colorPrimary, 55%);
+    background: color.adjust(config.$colorPrimary, $lightness: 55%);
 }
 
 .video-container {
@@ -26,4 +30,3 @@
     width: 100%;
     height: 100%;
 }
-

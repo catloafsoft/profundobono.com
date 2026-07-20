@@ -1,3 +1,6 @@
+@use "../utils/extends";
+@use "../utils/mixins";
+
 /* GALLERY
 -------------------------------------------------*/
 .gallery {
@@ -8,10 +11,10 @@
 .gallery-item {
     position: relative;
     float: left;
-    @include breakpoint(lsmall) {
+    @include mixins.breakpoint(lsmall) {
         width: 50%;
     }
-    @include breakpoint(small) {
+    @include mixins.breakpoint(small) {
         width: 25%;
     }
     .icon {

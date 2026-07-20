@@ -1,21 +1,25 @@
+@use "../utils/config";
+@use "../utils/extends";
+@use "../utils/mixins";
+
 /* legal
 -------------------------------------------------*/
 .legal {
     @extend %space;
     .row {
-        @include breakpoint(small) {
+        @include mixins.breakpoint(small) {
             display: flex;
             flex-wrap: wrap;
         }
     }
     [class^="col-"] {
-        @include breakpoint(small) {
+        @include mixins.breakpoint(small) {
             display: flex; 
         }
     }
     .icon {
         font-size: 1.5rem;
-        color: $colorPrimary;
+        color: config.$colorPrimary;
     }
     h4 {
         margin-bottom: 0;
