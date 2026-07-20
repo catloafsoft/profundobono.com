@@ -36,10 +36,21 @@ test("custom scripts use the Bootstrap 5 JavaScript API", async () => {
   assert.match(script, /bootstrap\.Collapse\.getOrCreateInstance/);
   assert.match(script, /querySelectorAll\('\.navbar-nav \.nav-link'\)/);
   assert.match(script, /addEventListener\('click'/);
+  assert.match(script, /window\.scrollTo/);
   assert.match(script, /\[data-bs-toggle="tooltip"\]/);
-  assert.doesNotMatch(script, /\$\('\.navbar-nav/);
+  assert.doesNotMatch(script, /\bjQuery\b|\$\(/);
   assert.doesNotMatch(script, /\.collapse\(['"]hide['"]\)/);
   assert.doesNotMatch(script, /\.tooltip\(\)/);
+});
+
+test("the site bundle has no jQuery plugin dependencies", async () => {
+  const layout = await read("_layouts/default.html");
+  const gruntfile = await read("Gruntfile.js");
+  const stylesheet = await read("css/main.scss");
+
+  assert.doesNotMatch(layout, /jquery/i);
+  assert.doesNotMatch(gruntfile, /jquery|owl|magnific|gmap3/i);
+  assert.doesNotMatch(stylesheet, /owl-carousel|magnific-popup/);
 });
 
 test("project Sass uses modules instead of deprecated imports", async () => {
