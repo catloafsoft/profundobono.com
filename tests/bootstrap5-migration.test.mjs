@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
+import { runInNewContext } from "node:vm";
 
 async function read(path) {
   return readFile(new URL(`../${path}`, import.meta.url), "utf8");
@@ -26,6 +27,8 @@ test("navigation and ScrollSpy use Bootstrap 5 markup", async () => {
   assert.match(header, /data-bs-toggle="collapse"/);
   assert.match(header, /data-bs-target="#main-navigation"/);
   assert.match(layout, /data-bs-spy="scroll"/);
+  assert.match(layout, /tabindex="-1"/);
+  assert.doesNotMatch(layout, /tabindex="0"/);
   assert.doesNotMatch(`${header}\n${layout}`, /data-(?:toggle|target|spy)=/);
   assert.doesNotMatch(header, /navbar-(?:default|toggle\b|header|right)/);
 });
@@ -41,6 +44,52 @@ test("custom scripts use the Bootstrap 5 JavaScript API", async () => {
   assert.doesNotMatch(script, /\bjQuery\b|\$\(/);
   assert.doesNotMatch(script, /\.collapse\(['"]hide['"]\)/);
   assert.doesNotMatch(script, /\.tooltip\(\)/);
+});
+
+test("malformed URL hashes do not break smooth-scroll initialization", async () => {
+  const script = await read("js/custom.js");
+  const listeners = {};
+  const malformedLink = {
+    hash: "#bad%E0%A4%A",
+    hostname: "example.test",
+    pathname: "/",
+    addEventListener(type, listener) {
+      listeners[type] = listener;
+    },
+  };
+  let requestedTarget;
+  const document = {
+    querySelectorAll(selector) {
+      return selector.startsWith("a.scroll") ? [malformedLink] : [];
+    },
+    getElementById(name) {
+      requestedTarget = name;
+      return null;
+    },
+    getElementsByName() {
+      return [];
+    },
+  };
+
+  runInNewContext(script, {
+    bootstrap: { Tooltip: class {} },
+    document,
+    location: { hostname: "example.test", pathname: "/" },
+    window: {
+      matchMedia: () => ({ matches: false }),
+      scrollTo() {},
+      scrollY: 0,
+    },
+  });
+
+  assert.doesNotThrow(() => listeners.click({ preventDefault() {} }));
+  assert.equal(requestedTarget, "bad%E0%A4%A");
+});
+
+test("build tooling uses a pinned Grunt CLI", async () => {
+  const packageJson = JSON.parse(await read("package.json"));
+
+  assert.equal(packageJson.devDependencies["grunt-cli"], "1.5.0");
 });
 
 test("the site bundle has no jQuery plugin dependencies", async () => {

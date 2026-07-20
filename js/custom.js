@@ -24,7 +24,14 @@
                 return;
             }
 
-            var targetName = decodeURIComponent(link.hash.slice(1));
+            var targetName;
+
+            try {
+                targetName = decodeURIComponent(link.hash.slice(1));
+            } catch (error) {
+                targetName = link.hash.slice(1);
+            }
+
             var target = document.getElementById(targetName) || document.getElementsByName(targetName)[0];
 
             if (target) {
