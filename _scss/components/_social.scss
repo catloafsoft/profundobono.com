@@ -1,8 +1,11 @@
+@use "../utils/config";
+@use "../utils/extends";
+
 /* SOCIAL
 -------------------------------------------------*/
 .social {
     @extend %no-bullet;
-    margin: $space 0 10px;
+    margin: config.$space 0 10px;
     li {
         display: inline-block;
         padding: 0 10px;
@@ -10,7 +13,7 @@
         line-height: 1;
     }
     a {
-        color: $white;
+        color: config.$white;
     }
     .icon {
         height: 1em;

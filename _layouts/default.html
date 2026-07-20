@@ -1,5 +1,5 @@
 {% include doctype-head.html %}
-<body data-spy="scroll" data-offset="80" data-target=".scrollspy" id="top">
+<body data-bs-spy="scroll" data-bs-offset="80" data-bs-target=".scrollspy" id="top" tabindex="-1">
     {% if site.google_tag %}
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ site.google_tag }}" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -15,7 +15,7 @@
         {{ content }}
     {% include footer.html %}
     
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="{{ site.baseurl }}/js/bootstrap.bundle.min.js"></script>
     <script src="{{ site.baseurl }}/js/all.min.js"></script>
 </body>
 </html>

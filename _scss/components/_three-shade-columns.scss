@@ -1,39 +1,44 @@
+@use "sass:color";
+@use "../utils/config";
+@use "../utils/extends";
+@use "../utils/mixins";
+
 /* 3 SHADE COLUMNS
 -------------------------------------------------*/
 .three-shade-col {
   @extend %clearfix;
   @extend %align-center;
   display: block;
-  @include breakpoint(small) {
+  @include mixins.breakpoint(small) {
     display: flex;
   }
   [class^="col-"] {
-    padding: $space * 3 $space;
-    color: $white;
-    @include breakpoint(medium) {
-      padding-left: $space * 3;
-      padding-right: $space * 3;
+    padding: config.$space * 3 config.$space;
+    color: config.$white;
+    @include mixins.breakpoint(medium) {
+      padding-left: config.$space * 3;
+      padding-right: config.$space * 3;
     }
     &:nth-child(1) {
-      background: $colorPrimary;
+      background: config.$colorPrimary;
     }
     &:nth-child(2) {
-      background: lighten($colorPrimary, 2%);
+      background: color.adjust(config.$colorPrimary, $lightness: 2%);
     }
     &:nth-child(3) {
-      background: lighten($colorPrimary, 4%);
+      background: color.adjust(config.$colorPrimary, $lightness: 4%);
     }
   }
   .icon {
     font-size: 2rem;
-    color: $white;
+    color: config.$white;
     vertical-align: middle;
   }
   h3,
   h4,
   h5,
   a {
-    color: $white;
+    color: config.$white;
     text-wrap: pretty;
   }
   a {

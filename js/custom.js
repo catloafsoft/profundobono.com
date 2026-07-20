@@ -1,108 +1,53 @@
-(function($) {
+(function() {
     'use strict';
 
     /* Hide menu after click
     ----------------------------------------------*/
-    $('.navbar-nav li a').click(function(event) {
-        $('.in').collapse('hide');
+    document.querySelectorAll('.navbar-nav .nav-link').forEach(function(link) {
+        link.addEventListener('click', function() {
+            var navigation = document.getElementById('main-navigation');
+
+            if (navigation && navigation.classList.contains('show')) {
+                bootstrap.Collapse.getOrCreateInstance(navigation).hide();
+            }
+        });
     });
 
     /* Smooth scroll to section
     ----------------------------------------------*/
-    $('a.scroll[href*=#]:not([href=#])').click(function() {
-        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+    document.querySelectorAll('a.scroll[href*="#"]:not([href="#"])').forEach(function(link) {
+        link.addEventListener('click', function(event) {
+            var samePage = location.hostname === link.hostname &&
+                location.pathname.replace(/^\//, '') === link.pathname.replace(/^\//, '');
 
-            var target = $(this.hash);
-            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-            if (target.length) {
-                $('html,body').animate({
-                    scrollTop: target.offset().top-70
-                }, 2000);
-                return false;
+            if (!samePage || !link.hash) {
+                return;
             }
-        }
-    });
 
-    /* Team slideshow
-    ----------------------------------------------*/
-    $("#team-carousel").owlCarousel({
- 
-        autoPlay: 5000, //Set AutoPlay to 5 seconds
+            var targetName;
 
-        items : 4,
-        itemsDesktopSmall : [979,3],
-        stopOnHover: true
- 
-    });
+            try {
+                targetName = decodeURIComponent(link.hash.slice(1));
+            } catch (error) {
+                targetName = link.hash.slice(1);
+            }
 
-    /* Testimonials slideshow
-    ----------------------------------------------*/
-    $("#testimonial-carousel").owlCarousel({
- 
-        autoPlay: 6000, //Set AutoPlay to 6 seconds
- 
-        singleItem: true,
-        pagination : false
- 
+            var target = document.getElementById(targetName) || document.getElementsByName(targetName)[0];
+
+            if (target) {
+                event.preventDefault();
+                window.scrollTo({
+                    top: target.getBoundingClientRect().top + window.scrollY - 70,
+                    behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
+                });
+            }
+        });
     });
 
     /* Tooltip
     ----------------------------------------------*/
-    $('[data-toggle="tooltip"]').tooltip();
-
-    /* Lightbox
-    ----------------------------------------------*/
-    $('.image-link').magnificPopup({
-        type:'image'
+    document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(function(element) {
+        new bootstrap.Tooltip(element);
     });
 
-    /* Google map
-    ----------------------------------------------*/
-    $(".map").each(function(){
-            
-        var data_zoom = 17;
-        
-        if ($(this).attr("data-zoom") !== undefined) {
-            data_zoom = parseInt($(this).attr("data-zoom"),10);
-        }   
-        
-        $(this).gmap3({
-            marker: {
-                values: [{
-                    address: $(this).attr("data-address"),
-                    data: $(this).attr("data-address-details")
-                }],
-                options:{
-                    draggable: false
-                },
-                events:{
-                    click: function(marker, event, context){
-                        var map = $(this).gmap3("get"),
-                        infowindow = $(this).gmap3({get:{name:"infowindow"}});
-                        if (infowindow){
-                            infowindow.open(map, marker);
-                            infowindow.setContent(context.data);
-                        } else {
-                            $(this).gmap3({
-                                infowindow:{
-                                    anchor:marker, 
-                                    options:{content: context.data}
-                                }
-                            });
-                        }
-                    }
-                }
-            },
-            map: {
-                options: {
-                    mapTypeId: google.maps.MapTypeId.ROADMAP,
-                    zoom: data_zoom,
-                    scrollwheel: false
-                }
-            }
-        });
-        
-    });
-          
-})(jQuery);
-
+})();

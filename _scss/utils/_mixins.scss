@@ -1,11 +1,15 @@
+@use "sass:map";
+@use "sass:meta";
+@use "config";
+
 /* MIXINS
 -------------------------------------------------*/
 
 /* Breakpoints
 -------------------------------*/
 @mixin breakpoint($mq) {
-    @if map-has-key($bpoints, $mq) {
-        @media #{inspect(map-get($bpoints, $mq))} {
+    @if map.has-key(config.$bpoints, $mq) {
+        @media #{meta.inspect(map.get(config.$bpoints, $mq))} {
             @content;
         }
     }

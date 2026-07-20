@@ -8,7 +8,7 @@ module.exports = function (grunt) {
                 separator: "\n\n"
             },
             dist: {
-                src: ['js/bootstrap.js', 'js/owl.carousel.js', 'js/jquery.magnific-popup.js', 'js/gmap3.js', 'js/custom.js'],
+                src: ['js/custom.js'],
                 dest: 'js/all.js'
             } 
         },
@@ -18,24 +18,6 @@ module.exports = function (grunt) {
                 files: {
                     'js/all.min.js' : ['js/all.js'],
                 }
-            }
-        },
-
-        sass: {
-            dist: {
-                options: {
-                    outputStyle: 'compressed'
-                },
-                files: {
-                    'css/main-unprefixed.css' : '_scss/main.scss'
-                }
-            }
-        },
-
-        autoprefixer: {
-            main: {
-                src: "css/main-unprefixed.css",
-                dest: "css/main.css"
             }
         },
 
@@ -77,8 +59,8 @@ module.exports = function (grunt) {
 
         watch: {
             stylesheets: {
-                files: ['_scss/**/*.scss'],
-                tasks: ['sass', 'autoprefixer', 'shell:jekyllBuild']
+                files: ['_scss/**/*.scss', 'css/main.scss'],
+                tasks: ['shell:jekyllBuild']
             },
             scripts: {
                 files: ['js/**/*.js'],

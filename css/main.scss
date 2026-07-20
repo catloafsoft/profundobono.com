@@ -1,36 +1,32 @@
 ---
 ---
-@import "utils/config";
-@import "bootstrap";
-@import "utils/mixins";
-@import "utils/extends";
+@use "utils/config";
+@use "utils/mixins";
+@use "utils/extends";
 
-@import "base/global";
-@import "base/typography";
+@use "base/global";
+@use "base/typography";
 
-@import "layout/layout";
-@import "layout/nav";
-@import "layout/footer";
+@use "layout/layout";
+@use "layout/nav";
+@use "layout/footer";
 
-@import "components/hero";
-@import "components/header";
-@import "components/form";
-@import "components/three-shade-columns";
-@import "components/section-title";
-@import "components/legal";
-@import "components/about";
-@import "components/auditions";
-@import "components/tickets";
-@import "components/aboutshow";
-@import "components/svg-icons";
-@import "components/icons-style";
-@import "components/tooltip";
-@import "components/home";
-@import "components/mailing-list";
-@import "components/ads";
-@import "components/social";
-@import "components/button";
-@import "components/ie";
-
-@import "vendor/owl-carousel";
-@import "vendor/magnific-popup";
+@use "components/hero";
+@use "components/header";
+@use "components/form";
+@use "components/three-shade-columns";
+@use "components/section-title";
+@use "components/legal";
+@use "components/about";
+@use "components/auditions";
+@use "components/tickets";
+@use "components/aboutshow";
+@use "components/svg-icons";
+@use "components/icons-style";
+@use "components/tooltip";
+@use "components/home";
+@use "components/mailing-list";
+@use "components/ads";
+@use "components/social";
+@use "components/button";
+@use "components/ie";

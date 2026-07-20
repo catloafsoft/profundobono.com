@@ -1,7 +1,9 @@
+@use "../utils/mixins";
+
 /* LAYOUT
 -------------------------------------------------*/
 .container-fluid {
-    @include breakpoint(medium) {
+    @include mixins.breakpoint(medium) {
         max-width: 1100px;
     }
 }

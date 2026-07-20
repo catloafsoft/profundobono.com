@@ -1,21 +1,25 @@
+@use "sass:color";
+@use "../utils/config";
+@use "../utils/extends";
+
 /* ABOUT
 -------------------------------------------------*/
 .about {
-  margin-bottom: $space;
+  margin-bottom: config.$space;
   @extend %space;
-  color: $white;
-  background: lighten($colorPrimary, 2%);
+  color: config.$white;
+  background: color.adjust(config.$colorPrimary, $lightness: 2%);
   h2,
   h4,
   h3 {
-    color: $white;
+    color: config.$white;
   }
   h4 {
     padding: 10px 0 0;
     margin: 0;
   }
   a {
-    color: $white;
+    color: config.$white;
     text-decoration: underline;
   }
 }
