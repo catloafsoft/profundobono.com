@@ -6121,12 +6121,14 @@ $.fn.gmap3 = function () {
 
     /* Hide menu after click
     ----------------------------------------------*/
-    $('.navbar-nav li a').click(function() {
-        var navigation = document.getElementById('main-navigation');
+    document.querySelectorAll('.navbar-nav .nav-link').forEach(function(link) {
+        link.addEventListener('click', function() {
+            var navigation = document.getElementById('main-navigation');
 
-        if (navigation && navigation.classList.contains('show')) {
-            bootstrap.Collapse.getOrCreateInstance(navigation).hide();
-        }
+            if (navigation && navigation.classList.contains('show')) {
+                bootstrap.Collapse.getOrCreateInstance(navigation).hide();
+            }
+        });
     });
 
     /* Smooth scroll to section

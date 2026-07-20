@@ -34,7 +34,10 @@ test("custom scripts use the Bootstrap 5 JavaScript API", async () => {
   const script = await read("js/custom.js");
 
   assert.match(script, /bootstrap\.Collapse\.getOrCreateInstance/);
+  assert.match(script, /querySelectorAll\('\.navbar-nav \.nav-link'\)/);
+  assert.match(script, /addEventListener\('click'/);
   assert.match(script, /\[data-bs-toggle="tooltip"\]/);
+  assert.doesNotMatch(script, /\$\('\.navbar-nav/);
   assert.doesNotMatch(script, /\.collapse\(['"]hide['"]\)/);
   assert.doesNotMatch(script, /\.tooltip\(\)/);
 });
