@@ -9,7 +9,7 @@ We have three levels of sponsorship, separately designated in our program:
 For only $2,500, this sponsorship level provides you with the following benefits:
 
 - Being specially identified in our program among the elite sponsors in this category
-- A full-page ad in the program (valued at $500)
+- A full-page ad in the program (valued at $750)
 - 20 tickets to whichever performance(s) you would like
 - Depending upon availability, additional tickets at a discounted price
 
@@ -18,7 +18,7 @@ For only $2,500, this sponsorship level provides you with the following benefits
 For only $2,000, this sponsorship level provides you with the following benefits:
 
 - Being specially identified in our program among the elite sponsors in this category
-- A full-page ad in the program (valued at $500)
+- A full-page ad in the program (valued at $750)
 - 15 tickets to whichever performance(s) you would like
 - Depending upon availability, additional tickets at a discounted price
 
@@ -27,7 +27,7 @@ For only $2,000, this sponsorship level provides you with the following benefits
 For only $1,500, this sponsorship level provides you with the following benefits:
 
 - Being specially identified as a sponsor in our program
-- A full-page ad in the program (valued at $500)
+- A full-page ad in the program (valued at $750)
 - 10 tickets to whichever performance(s) you would like
 - Depending upon availability, additional tickets at a discounted price
 
