@@ -3,7 +3,7 @@
   <h3>{{ include.date }}</h3>
   <h5>{{ include.time }}</h5>
   <stripe-buy-button
-    buy-button-id="buy_btn_{{ include.id }}"
+    buy-button-id="{{ include.id }}"
     publishable-key="{{ site.stripe_pk }}"
   >
   </stripe-buy-button>
