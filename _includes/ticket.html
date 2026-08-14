@@ -1,12 +1,9 @@
 <!-- Start of Selection -->
-<div class="text-center col-md-4">
+<div class="text-center col-md-4 p-4">
   <h3>{{ include.date }}</h3>
   <h5>{{ include.time }}</h5>
-  <stripe-buy-button
-    buy-button-id="{{ include.id }}"
-    publishable-key="{{ site.stripe_pk }}"
-  >
-  </stripe-buy-button>
-  <h2>${{ include.price }}</h2>
+  <p>
+    <a class="btn btn-primary" href="https://buy.stripe.com/{{ include.id }}" role="button" target="_blank" rel="noopener noreferrer">Buy - ${{ include.price }}</a>
+  </p>
 </div>
 <!-- End of Selection -->
