@@ -4,8 +4,8 @@ Purchase your tickets now for *Flifferschmeep: Another Example of What Happens W
 {% include ticket.html id="4gM3cw2cMcxK30T3wn0co0b" date="Friday, Nov 13, 2026, military discount" time="7:30PM" price=20 %}
 {% include ticket.html id="eVq5kE8Ba41e6d5gj90co09" date="Saturday, Nov 14, 2026" time="7:30PM" price=25 %}
 {% include ticket.html id="fZudRabNm9lycBt8QH0co0c" date="Saturday, Nov 14, 2026, military discount" time="7:30PM" price=20 %}
-{% include ticket.html id="14A5kE04EeFS0SLd6X0co0a" date="Sunday, Nov 15, 2026" time="7:30PM" price=25 %}
-{% include ticket.html id="28EbJ27x6cxKfNF1of0co0d" date="Sunday, Nov 15, 2026, military discount" time="7:30PM" price=20 %}
+{% include ticket.html id="14A5kE04EeFS0SLd6X0co0a" date="Sunday, Nov 15, 2026" time="2PM" price=25 %}
+{% include ticket.html id="28EbJ27x6cxKfNF1of0co0d" date="Sunday, Nov 15, 2026, military discount" time="2PM" price=20 %}
 
 Tickets are available at the door, but it's a long ugly line filled with long ugly people who pay entirely in nickels, so you'll wish you'd bought your tickets in advance. And besides, you're going to want to go to the book signing, and that line's just going to get lonnnnger while you stand there wondering why Past You hated Present You so much...
 
