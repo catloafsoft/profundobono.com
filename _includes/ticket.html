@@ -1,9 +1,11 @@
-<!-- Start of Selection -->
-<div class="text-center col-md-4 p-4 mx-auto">
+<div class="text-center col-sm-4 p-4">
   <h3>{{ include.date }}</h3>
+  <p class="ticket-location">{{ include.location }}</p>
   <h5>{{ include.time }}</h5>
-  <p>
+  <p class="ticket-buy">
     <a class="btn btn-primary" href="https://buy.stripe.com/{{ include.id }}" role="button" target="_blank" rel="noopener noreferrer">Buy - ${{ include.price }}</a>
+    {% if include.military_id %}
+    <a class="btn btn-outline-primary" href="https://buy.stripe.com/{{ include.military_id }}" role="button" target="_blank" rel="noopener noreferrer">Military - ${{ include.military_price }}</a>
+    {% endif %}
   </p>
 </div>
-<!-- End of Selection -->
