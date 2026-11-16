@@ -5,5 +5,6 @@
 -------------------------------------------------*/
 .aboutshow {
     @extend %space;
+    background: config.$colorBg;
     margin-bottom: config.$space;
 }

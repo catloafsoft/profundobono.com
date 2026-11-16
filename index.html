@@ -54,15 +54,6 @@ display %}
   </div>
 </div>
 <!-- End About -->
-<!-- Start About the Show -->
-<div id="aboutshow" class="aboutshow">
-  <div class="container-fluid">
-    <h2 class="section-title">About the Show</h2>
-    {% capture aboutshow %}{% include aboutshow.md %}{% endcapture %} {{
-    aboutshow | markdownify }}
-  </div>
-</div>
-<!-- End About The Show -->
 <!-- Start From the Director -->
 <div id="director" class="director">
   <div class="container-fluid">
@@ -72,6 +63,15 @@ display %}
   </div>
 </div>
 <!-- End From the Director -->
+<!-- Start About the Show -->
+<div id="aboutshow" class="aboutshow">
+  <div class="container-fluid">
+    <h2 class="section-title">About the Show</h2>
+    {% capture aboutshow %}{% include aboutshow.md %}{% endcapture %} {{
+    aboutshow | markdownify }}
+  </div>
+</div>
+<!-- End About The Show -->
 <!-- Start Auditions -->
 <div id="auditions" class="auditions">
   <div class="container-fluid">
