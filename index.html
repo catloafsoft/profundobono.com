@@ -63,6 +63,15 @@ display %}
   </div>
 </div>
 <!-- End About The Show -->
+<!-- Start From the Director -->
+<div id="director" class="director">
+  <div class="container-fluid">
+    <h2 class="section-title">From the Director</h2>
+    {% capture director %}{% include director.md %}{% endcapture %} {{
+      director | markdownify }}
+  </div>
+</div>
+<!-- End From the Director -->
 <!-- Start Auditions -->
 <div id="auditions" class="auditions">
   <div class="container-fluid">
@@ -71,18 +80,6 @@ display %}
   </div>
 </div>
 <!-- End Auditions -->
-<!-- Start Tickets -->
-<div id="tickets" class="tickets">
-  <div class="container-fluid">
-    <h2 class="section-title">Tickets</h2>
-    {% if site.no_tickets %}
-      {% capture tickets %}{% include tickets-gone.html %}{% endcapture %} {{ tickets | markdownify }}
-    {% else %}
-      {% capture tickets %}{% include tickets.md %}{% endcapture %} {{ tickets | markdownify }}
-    {% endif %}
-  </div>
-</div>
-<!-- End Tickets -->
 <!-- Start Ads -->
 <div id="ads" class="ads">
   <div class="container-fluid">

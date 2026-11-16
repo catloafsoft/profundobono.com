@@ -18,4 +18,4 @@ Performances will take place:
 
 But what does *Flifferschmeep* mean?
 
-It’s something literally earth-changing — but to know the answer, you need to buy a ticket and come to the show.
+It’s something literally earth-changing — but unfortunately the show is over. (You can go buy the book though!)

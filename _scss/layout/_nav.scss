@@ -5,9 +5,11 @@
 /* NAV
 -------------------------------------------------*/
 .navbar-brand {
+    display: inline-flex;
+    align-items: center;
     padding: 0;
     margin: 0;
-    line-height: 70px;
+    line-height: 1.2;
     > img {
         display: inline-block;
         max-width: 220px;
@@ -23,14 +25,30 @@
     padding: 0;
     margin-bottom: 0;
     border: none;
+    align-items: center;
+}
+
+.navbar > .container-fluid {
+    align-items: center;
+    min-height: 70px;
+}
+
+.navbar .navbar-nav {
+    @include mixins.breakpoint(medium) {
+        flex-wrap: nowrap;
+        align-items: stretch;
+    }
 }
 
 .navbar .navbar-nav .nav-link,
 .navbar .navbar-nav .nav-link:focus {
     color: config.$colorBase;
     @include mixins.breakpoint(medium) {
-        padding: 25px 15px;
+        padding: 25px 8px;
         line-height: 20px;
+        font-size: 0.8125rem;
+        white-space: nowrap;
+        flex-shrink: 0;
     }
 }
 

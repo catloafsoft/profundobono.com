@@ -3,10 +3,12 @@
 .logo {
     height: 55px;
     margin-right: 10px;
-    position: relative;
-    top: -9px;
+    display: block;
+    flex-shrink: 0;
 }
 .toplink {
+    display: flex;
+    align-items: center;
     margin: 0;
     line-height: 1;
     @include typography.script-font;
